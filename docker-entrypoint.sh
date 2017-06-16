@@ -7,7 +7,7 @@
 echo "part 0: persistent dir...."
 export RESET=${RESET:-0}
 if [ ${RESET} -eq 0 ]; then
-    rm -f /data
+    rm -f /data/*
 fi
 
 mkdir -p /data/kafka-logs

@@ -16,7 +16,7 @@ ADD config/* ${KAFKA_HOME}/config/
 
 # 9092 is kafka
 EXPOSE 9092
-
+VOLUME /data
 WORKDIR ${KAFKA_HOME}
 
 CMD ["docker-entrypoint.sh"]
