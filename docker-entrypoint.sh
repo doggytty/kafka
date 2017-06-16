@@ -19,7 +19,7 @@ echo "part 1: now compare config...."
 # consumer.properties
 export ZK_ADDRESS=${ZK_ADDRESS:-}
 if [ -z ${ZK_ADDRESS} ]; then
-    echo "==> zk address is null, exit 1"
+    echo "==> ZK_ADDRESS is null, exit 1"
     exit 1
 fi
 echo "==> ZK_ADDRESS: ${ZK_ADDRESS}"
@@ -108,11 +108,11 @@ sed -i \
 echo "part 3: now start kafka...."
 cd ${KAFKA_HOME}
 
-if [[ $1 == "sh" ]]; then
-    /sh
-elif [[ $1 == "start" ]]; then
+if [[ "$1" = "sh" ]]; then
+    /bin/sh
+elif [[ "$1" = "start" ]]; then
     $2 config/server.properties
-elif [[ $1 == "custom" ]]; then
+elif [[ "$1" = "custom" ]]; then
     $2 $3
 else
     kafka-server-start.sh config/server.properties
